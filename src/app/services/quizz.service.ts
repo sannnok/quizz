@@ -4,12 +4,14 @@ import { Question } from '../interfaces/question.interface';
 import { BehaviorSubject } from 'rxjs';
 import { QuizzState } from '../interfaces/quizz-state.interface';
 
+import { environment } from '../../environments/environment'
+
 enum Direction {
   FORWARD,
   BACKWARD
 }
 
-const URL = '../../assets/data/quizz.json';
+const MOCKED_DATA = '/data/quizz.json';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +46,7 @@ export class QuizzService {
   }
     
   getQuizz() {
-    this.http.get<Array<Question>>(URL).subscribe(this.setQuestions.bind(this))
+    this.http.get<Array<Question>>(`${environment.assets}${MOCKED_DATA}`).subscribe(this.setQuestions.bind(this))
   }
 
   private setQuestions(questions: Question[]) {

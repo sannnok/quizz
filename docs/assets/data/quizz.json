@@ -1,0 +1,98 @@
+[
+  {
+    "name": "What does Angular stands for?",
+    "fieldProps": {
+      "type": 1,
+      "options": [
+        {
+          "answerId": 1,
+          "value": "I dont know"
+        },
+        {
+          "answerId": 2,
+          "value": "You dont know"
+        },
+        {
+          "answerId": 3,
+          "value": "Mars colonization"
+        }
+      ]
+    },
+    "correctAnswer": [1]
+  },
+  {
+    "name": "What does HTML stands for?",
+    "fieldProps": {
+      "type": 2,
+      "options": [
+        {
+          "answerId": 1,
+          "value": "Web page structure"
+        },
+        {
+          "answerId": 2,
+          "value": "Programming NASA spaceships"
+        },
+        {
+          "answerId": 3,
+          "value": "Building email templates"
+        }
+      ]
+    },
+    "correctAnswer": [1, 3]
+  },  {
+    "name": "What is Life all about?",
+    "fieldProps": {
+      "type": 2,
+      "options": [
+        {
+          "answerId": 1,
+          "value": "Fulfilling personal inspirations and desires"
+        },
+        {
+          "answerId": 2,
+          "value": "Spiritual quest to understand their place in the world"
+        },
+        {
+          "answerId": 3,
+          "value": "Contribution to society"
+        },
+        {
+          "answerId": 4,
+          "value": "Building meaningful relationships"
+        },
+        {
+          "answerId": 5,
+          "value": "42"
+        }
+      ]
+    },
+    "correctAnswer": [5, 4, 3, 2, 1]
+  },
+  {
+    "name": "Type your name",
+    "fieldProps": {
+      "type": 3,
+      "options": [
+        {
+          "answerId": 1,
+          "value": "Gabriella"
+        }
+      ]
+    },
+    "correctAnswer": [1]      
+  },
+  {
+    "name": "Type your age",
+    "fieldProps": {
+      "type": 4,
+      "options": [
+        {
+          "answerId": 1,
+          "value": 100
+        }
+      ]
+    },
+    "correctAnswer": [1]      
+  }
+]

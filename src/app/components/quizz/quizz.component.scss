@@ -1,6 +1,10 @@
 .quizz-container {
   margin: 5em auto;
-  padding: 0px 15%;
+  padding: 0px 25%;
+
+  @media (max-width: 1024px) {
+    padding: 0px 10%;
+  }
 
   .sbm-button {
     float: right;
