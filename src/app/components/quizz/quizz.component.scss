@@ -1,0 +1,25 @@
+.quizz-container {
+  margin: 5em auto;
+  padding: 0px 15%;
+
+  .sbm-button {
+    float: right;
+    color: #018c01;
+    cursor: pointer;
+  }
+
+  .disabled {
+    color: #c8c8c8;
+    pointer-events: none;
+    text-decoration: line-through;
+  }
+
+  .score {
+    text-align: center;
+    padding-bottom: 16px;
+  }
+
+  .result-page {
+    text-align: center;
+  }
+}

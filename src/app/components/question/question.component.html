@@ -1,0 +1,21 @@
+<div class="question-container" [formGroup]="formGroup">
+  <div class="question">{{ step }}) {{ question.name }}</div>
+
+  <app-dynamic-input
+    [fieldProps]="question.fieldProps"
+    [correctAnswer]="question.correctAnswer"
+    [formControlName]="'question' + step"></app-dynamic-input>
+</div>
+
+<div class="actions">
+  <div
+    class="prev-button"
+    *ngIf="step - 1"
+    (click)="onPrevClick()">Prev</div>
+
+  <div
+    class="next-button"
+    *ngIf="step !== state$.value.questions.length"
+    [class.disabled]="!formGroup.controls['question' + step].valid"
+    (click)="onNextClick()">Next</div>
+</div>

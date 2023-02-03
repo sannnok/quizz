@@ -1,0 +1,27 @@
+.question-container {
+  height: 40vh;
+
+  .question {
+    margin-bottom: 16px;
+  }
+}
+
+.actions {
+  .next-button, .prev-button {
+    cursor: pointer;
+  }
+  
+  .next-button {
+    float: right;
+  }
+  
+  .prev-button {
+    float: left;
+  }
+}
+
+.disabled {
+  color: #c8c8c8;
+  pointer-events: none;
+  text-decoration: line-through;
+}

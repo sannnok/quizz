@@ -1,0 +1,26 @@
+<div [ngSwitch]="fieldProps.type">
+  <div *ngSwitchCase="FieldType.SELECT">
+    <label *ngFor="let option of fieldProps.options">
+      <input
+        type="radio"
+        [value]="option.answerId"
+        [(ngModel)]="value"
+        (ngModelChange)="propagateChange($event)"
+        >
+        <span>{{ option.value }}</span>
+        <br>
+    </label>
+
+  </div>
+  <div *ngSwitchCase="FieldType.MULTISELECT">
+    <div [formGroup]="form">
+      <app-multiselect [options]="fieldProps.options" (valueChanged)="propagateChange($event)" formControlName="multiselect"></app-multiselect>
+    </div>
+  </div>
+  <div *ngSwitchCase="FieldType.INPUT">
+    <input type="text" [(ngModel)]="value" (ngModelChange)="propagateChange($event)">
+  </div>
+  <div *ngSwitchCase="FieldType.NUMBERINPUT">
+    <input type="number" [(ngModel)]="value" (ngModelChange)="propagateChange($event)">
+  </div>
+</div>

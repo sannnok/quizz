@@ -1,0 +1,31 @@
+<div class="quizz-container" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div *ngIf="showResults$ | async" class="result-page">
+    Congrats, you done it!
+    You've got 3 of {{ questionsLength$ | async }} right.
+  </div>
+
+  <div *ngIf="!(showResults$ | async)">
+    <div class="score">
+      Question {{ currentQuestionIndex$ | async }} /
+      {{ questionsLength$ | async }}
+    </div>
+  
+    <ng-container *ngFor="let question of questions$ | async; let i = index">
+      <app-question
+        *ngIf="(currentQuestionIndex$ | async) === i + 1"
+        [step]="i + 1"
+        [question]="question"
+        [formGroup]="form"></app-question>
+    </ng-container>
+  
+    <div
+      class="sbm-button"
+      *ngIf="(currentQuestionIndex$ | async) === state$.value.questions.length"
+      [class.disabled]="!form.valid"
+      (click)="onSubmit()">Submit</div>
+  </div>
+</div>
+
+
+<span style="font-size: .5em;">{{ form.value | json }}</span>
