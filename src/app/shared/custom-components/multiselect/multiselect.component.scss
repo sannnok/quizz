@@ -1,11 +1,20 @@
+div {
+  cursor: pointer;
+  margin-bottom: 1px;
+  text-align: center;
+  padding: 3px 0;
+  color: #575757;
+
+  &:hover {
+    background: #f2f2f2;
+  }
+}
+
 .selected {
   background-color: #d7d7d7;
+  border-radius: 5px;
 }
 
 .disabled {
   background-color: red;
-}
-
-div {
-  cursor: pointer;
 }

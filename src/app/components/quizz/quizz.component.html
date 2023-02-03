@@ -1,11 +1,5 @@
 <div class="quizz-container" [formGroup]="form" (ngSubmit)="onSubmit()">
-
-  <div *ngIf="showResults$ | async" class="result-page">
-    Congrats, you done it!
-    You've got 3 of {{ questionsLength$ | async }} right.
-  </div>
-
-  <div *ngIf="!(showResults$ | async)">
+  <div *ngIf="!(showResults$ | async); else showResultBlock">
     <div class="score">
       Question {{ currentQuestionIndex$ | async }} /
       {{ questionsLength$ | async }}
@@ -28,4 +22,12 @@
 </div>
 
 
-<span style="font-size: .5em;">{{ form.value | json }}</span>
+<span style="font-size: .5em; position: fixed; bottom: 0;">{{ form.value | json }}</span>
+
+
+<ng-template #showResultBlock>
+  <div class="result-page">
+    Congrats, you done it!
+    You've got 3 of {{ questionsLength$ | async }} right.
+  </div>
+</ng-template>

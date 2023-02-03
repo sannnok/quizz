@@ -2,7 +2,16 @@
   height: 40vh;
 
   .question {
-    margin-bottom: 16px;
+    margin-bottom: 1em;
+    text-align: center;
+    background: #ededed;
+    border-radius: 5px;
+    min-height: 2em;
+    line-height: 2em;
+  }
+
+  @media (max-width: 1024px) {
+    height: 70vh;
   }
 }
 
