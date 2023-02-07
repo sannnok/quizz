@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { AnswerOption, AnswerOptionSelection } from 'src/app/interfaces/answer.interface';
+import { AnswerOptionSelection } from 'src/app/quiz/interfaces/answer.interface';
+
 
 @Component({
   selector: 'app-multiselect',

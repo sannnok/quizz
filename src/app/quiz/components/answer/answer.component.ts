@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
-import { Question } from 'src/app/interfaces/question.interface';
-import { QuizzState } from 'src/app/interfaces/quizz-state.interface';
-import { QuizzService } from 'src/app/services/quizz.service';
+import { Question } from '../../interfaces/question.interface';
+import { QuizzState } from '../../interfaces/quizz-state.interface';
+import { QuizzService } from '../../services/quizz.service';
+
 
 @Component({
   selector: 'app-answer',

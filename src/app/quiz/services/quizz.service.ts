@@ -4,7 +4,7 @@ import { Question } from '../interfaces/question.interface';
 import { BehaviorSubject } from 'rxjs';
 import { QuizzState } from '../interfaces/quizz-state.interface';
 
-import { environment } from '../../environments/environment'
+import { environment } from '../../../environments/environment'
 
 enum Direction {
   FORWARD,

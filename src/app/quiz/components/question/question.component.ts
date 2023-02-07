@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { BehaviorSubject, map, Observable, tap } from 'rxjs';
-import { Question } from 'src/app/interfaces/question.interface';
-import { QuizzState } from 'src/app/interfaces/quizz-state.interface';
-import { QuizzService } from 'src/app/services/quizz.service';
-
+import { BehaviorSubject } from 'rxjs';
+import { Question } from '../../interfaces/question.interface';
+import { QuizzState } from '../../interfaces/quizz-state.interface';
+import { QuizzService } from '../../services/quizz.service';
 
 @Component({
   selector: 'app-question',

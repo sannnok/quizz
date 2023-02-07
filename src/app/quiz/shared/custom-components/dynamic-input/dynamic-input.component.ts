@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ControlValueAccessor, FormControl, FormGroup, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { FieldProps, FieldType } from 'src/app/interfaces/answer.interface';
+import { FieldProps, FieldType } from '../../../interfaces/answer.interface';
+
 
 @Component({
   selector: 'app-dynamic-input',
