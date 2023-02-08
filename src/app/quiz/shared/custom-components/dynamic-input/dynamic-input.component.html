@@ -5,22 +5,27 @@
         [id]="'select' + i"
         type="radio"
         [value]="option.answerId"
-        [(ngModel)]="value"
-        (ngModelChange)="propagateChange($event)"
+        [(ngModel)]="value[0]"
+        (ngModelChange)="propagateChange($event, FieldType.SELECT)"
         >
-        <label [for]="'select' + i">{{ option.value }}</label>
+        <label [for]="'select' + i" [class.isCorrect]="isCorrect">{{ option.value }}</label>
         <br>
     </div>
   </div>
   <div *ngSwitchCase="FieldType.MULTISELECT" class="field-container">
     <div [formGroup]="form">
-      <app-multiselect [options]="fieldProps.options" (valueChanged)="propagateChange($event)" formControlName="multiselect"></app-multiselect>
+      <app-multiselect
+        [value]="value"
+        [options]="fieldProps.options"
+        (valueChanged)="propagateChange($event, FieldType.MULTISELECT)"
+        [isCorrect]="isCorrect"
+      ></app-multiselect>
     </div>
   </div>
   <div *ngSwitchCase="FieldType.INPUT" class="field-container">
-    <input type="text" [(ngModel)]="value" (ngModelChange)="propagateChange($event)">
+    <input type="text" [(ngModel)]="value[0]" (ngModelChange)="propagateChange($event, FieldType.INPUT)" [class.isCorrectInput]="isCorrect">
   </div>
   <div *ngSwitchCase="FieldType.NUMBERINPUT" class="field-container">
-    <input type="number" [(ngModel)]="value" (ngModelChange)="propagateChange($event)">
+    <input type="number" [(ngModel)]="value[0]" (ngModelChange)="propagateChange($event, FieldType.NUMBERINPUT)" [class.isCorrectInput]="isCorrect">
   </div>
 </div>

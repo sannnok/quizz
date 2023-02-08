@@ -1,6 +1,7 @@
 <div *ngFor="let option of options"
   [class.isDisabled]="disabled"
   [class.selected]="option.isSelected"
+  [class.isCorrect]="isCorrect"
   (click)="toggleSelection(option)">
   {{ option.value }}
 </div>

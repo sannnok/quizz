@@ -28,6 +28,6 @@
 <ng-template #showResultBlock>
   <div class="result-page">
     Congrats, you done it!
-    You've got 3 of {{ questionsLength$ | async }} right.
+    You've got {{ correctAnswerCount$ | async }} of {{ questionsLength$ | async }} right.
   </div>
 </ng-template>

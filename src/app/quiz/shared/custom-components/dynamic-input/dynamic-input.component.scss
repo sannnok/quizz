@@ -32,6 +32,11 @@ input[type=radio] {
   &:checked + label {
     background-color: #d7d7d7;
     border-radius: 5px;
+
+
+    &.isCorrect {
+      background: #a9f2bc !important;
+    }
   }
 }
 
@@ -49,6 +54,6 @@ input[type=radio] {
   background-color: red;
 }
 
-.correct {
-  background-color: green;
+.isCorrectInput {
+  background: #a9f2bc !important;
 }

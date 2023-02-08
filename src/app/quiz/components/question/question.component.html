@@ -3,7 +3,8 @@
 
   <app-dynamic-input
     [fieldProps]="question.fieldProps"
-    [correctAnswer]="question.correctAnswer"
+    [isCorrect]="isTheAnswerRight$ | async"
+    (valueCahnged)="checkAnswer($event, formGroup.controls['question' + step], step)"
     [formControlName]="'question' + step"></app-dynamic-input>
 </div>
 

@@ -19,10 +19,11 @@ import { AnswerOptionSelection } from 'src/app/quiz/interfaces/answer.interface'
 export class MultiselectComponent implements ControlValueAccessor {
   @Input() input: boolean = true;
   @Input('options') options!: AnswerOptionSelection[];
+  @Input() isCorrect?: boolean | null;
   @Output() valueChanged = new EventEmitter();
   onChange!: (value: number[]) => void;
   disabled = false;
-  value: number[] = [];
+  @Input() value: number[] = [];
 
   registerOnChange(fn: any): void {
     this.onChange = fn;
@@ -38,8 +39,8 @@ export class MultiselectComponent implements ControlValueAccessor {
   propagateChange() {
     if (this.onChange) {
       this.onChange(this.value);
-      this.valueChanged.next(this.value);
     }
+    this.valueChanged.next(this.value);
   }
 
   writeValue(value: number[]): void {

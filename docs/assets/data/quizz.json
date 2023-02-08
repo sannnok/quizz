@@ -77,10 +77,14 @@
         {
           "answerId": 1,
           "value": "Gabriella"
+        },
+        {
+          "answerId": 2,
+          "value": "Max"
         }
       ]
     },
-    "correctAnswer": [1]      
+    "correctAnswer": [1, 2]      
   },
   {
     "name": "Type your age",

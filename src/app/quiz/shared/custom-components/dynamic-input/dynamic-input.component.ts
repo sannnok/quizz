@@ -18,7 +18,7 @@ import { FieldProps, FieldType } from '../../../interfaces/answer.interface';
 })
 export class DynamicInputComponent implements ControlValueAccessor {
   @Input() fieldProps!: FieldProps;
-  @Input() correctAnswer!: number[];
+  @Input() isCorrect?: boolean | null;
   @Output() valueCahnged = new EventEmitter();
   onChange!: (value: number[] | number) => void;
   disabled = false;
@@ -38,17 +38,23 @@ export class DynamicInputComponent implements ControlValueAccessor {
     this.disabled = isDisabled;
   }
 
-  propagateChange(value: number[] | number) {
+  propagateChange(value: number[] | number, fieldType: FieldType) {
     if (this.onChange) {
-      this.onChange(value);
-      this.valueCahnged.next(value);
+      this.writeValue(value);
+      this.onChange(this.value);
+      this.valueCahnged.next({ value: this.value, fieldType });
     }
   }
 
-  writeValue(value: number[]): void {
-    if (value) {
+  writeValue(value: number[] | number): void {
+    if (!value) return;
+
+    if (Array.isArray(value)) {
       this.value = value;
+    } else {
+      this.value = [value];
     }
+    
     if (this.fieldProps.type === FieldType.MULTISELECT) {
       this.form.controls.multiselect.setValue(value);
     }

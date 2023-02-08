@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { BehaviorSubject, map, Observable, tap } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Question } from '../../interfaces/question.interface';
 import { QuizzState } from '../../interfaces/quizz-state.interface';
+import { PartOpt } from '../../interfaces/utils/utils.interface';
 import { QuizzService } from '../../services/quizz.service';
 
 
@@ -12,7 +13,7 @@ import { QuizzService } from '../../services/quizz.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AnswerComponent {
-  state$: BehaviorSubject<QuizzState>;
+  state$: BehaviorSubject<PartOpt<QuizzState, 'showResults'>>;
   questions$: Observable<Question[]>;
 
   constructor(private quizzService: QuizzService) {

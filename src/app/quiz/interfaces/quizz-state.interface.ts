@@ -4,5 +4,7 @@ export interface QuizzState {
   currentQuestionIndex: number;
   questions: Array<Question>;
   correctAnswerCount: number;
-  showResults?: boolean;
+  showResults: boolean;
+  rightAnswersAcc: number;
+  userAnswers: boolean[];
 }

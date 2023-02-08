@@ -17,6 +17,5 @@ export interface AnswerOption {
 
 export type AnswerOptionSelection = AnswerOption & {
   isSelected?: boolean;
-  wrong?: boolean;
   correct?: boolean;
 }
